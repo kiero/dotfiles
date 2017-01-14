@@ -1,0 +1,37 @@
+[core]
+  excludesfile = ~/.gitignore_global
+  editor = vim
+  autocrlf = false
+  safecrlf = true
+	quotepath = false
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[pager]
+  diff = diff-so-fancy | less --tabs=4 -RFX
+  show = diff-so-fancy | less --tabs=4 -RFX
+[color]
+  ui = true
+[color "diff"]
+  meta = yellow bold
+  commit = green bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+[alias]
+  co = checkout
+  cm = commit
+  st = status
+  br = branch
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  today = log --since=midnight --author='Konrad Kierys' --oneline
+[push]
+	default = simple
+[help]
+	autocorrect = 10
+[interactive]
+  diffFilter = diff-so-fancy
+[diff]
+	compactionHeuristic = true

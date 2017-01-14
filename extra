@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Extra file
+
+# Git credentials
+GIT_AUTHOR_NAME="Konrad Kierys"
+git config --global user.name "$GIT_AUTHOR_NAME"
+
+GIT_AUTHOR_EMAIL="hello@konradkierys.com"
+git config --global user.email "$GIT_AUTHOR_EMAIL"

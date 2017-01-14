@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# Program to update software stuff
+
+. ~/.dotfiles/helpers.sh
+
+# Update Homebrew stuff
+info "Checking Homebrew for updates"
+brew update
+brew outdated
+if ask_user_default_yes "Do you want to update brewed software if available?"; then
+  info "Updating Homebrew stuff"
+  brew upgrade
+  brew doctor
+fi
+
+# Update apps from Mac App Store
+info "Checking Mac App Store for updates"
+mas outdated
+if ask_user_default_yes "Do you want to update apps from Mac App Store if available?"; then
+  info "Updating Mac App Store apps"
+  mas upgrade
+fi
+
+# # Update ruby gems
+# info "Checking Ruby gems for updates"
+# gem update --system
+# gem outdated
+# if ask_user_default_yes "Do you want to update gems if available?"; then
+#   info "Updating Ruby gems"
+#   gem update
+#   gem cleanup
+# fi
+
+# Update system software
+info "Checking system software for updates"
+softwareupdate --list
+if ask_user_default_yes "Do you want to update system software if available?"; then
+  info "Updating system software"
+  softwareupdate -ri
+fi
