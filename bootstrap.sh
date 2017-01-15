@@ -6,7 +6,7 @@ DOTFILES=$(pwd -P)
 
 . $DOTFILES/helpers.sh
 
-for source in .bin .gemrc .gitconfig .gitignore_global .hushlogin .vimrc .zshrc; do
+for source in .bin .curlc .gemrc .gitconfig .gitignore_global .hushlogin .vimrc .zshrc; do
   target=~/`basename $source`
   source=$DOTFILES/$source
 
