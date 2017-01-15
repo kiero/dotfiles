@@ -61,3 +61,4 @@ alias path='echo -e ${PATH//:/\\n} | nl'
 
 # git aliases
 alias st="git status -s"
+alias gp="git push"
