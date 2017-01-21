@@ -6,7 +6,7 @@ DOTFILES=$(pwd -P)
 
 . $DOTFILES/helpers.sh
 
-for source in .bin .config/youtube-dl .curlc .gemrc .gitconfig .gitignore_global .hushlogin .vimrc .wgetrc .zshrc; do
+for source in .bin .config/youtube-dl .curlrc .gemrc .gitconfig .gitignore_global .hushlogin .vimrc .wgetrc .zshrc; do
   target=~/$source
   source=$DOTFILES/$source
 
