@@ -14,7 +14,7 @@ DOTFILES=$HOME/.dotfiles
 
 . $DOTFILES/helpers.sh
 . $DOTFILES/aliases.zsh
-. $DOTFILES/extra
+. $DOTFILES/extra.zsh
 . $DOTFILES/less_termcap.zsh
 
 bindkey -v
@@ -38,6 +38,9 @@ export LSCOLORS="eafxcxdxbxegedabagacad"
 export LS_COLORS="di=34;40:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
 export CLICOLOR=1
 
+# ZSH settings
+setopt hist_ignore_space
+
 # Create PROMPT
 . $DOTFILES/prompt.zsh
 
@@ -48,3 +51,5 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 autoload -Uz compinit && compinit
 
+# Source z (tracks most-used directories to make cd smarter)
+. /usr/local/etc/profile.d/z.sh
