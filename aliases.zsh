@@ -18,6 +18,9 @@ alias p='cd ~/Projects && ll'
 alias g="git"
 alias h="history"
 
+# Repeat the last command with sudo
+alias again="sudo !!"
+
 # Often use commands
 alias v=$EDITOR
 alias g=git
@@ -62,3 +65,8 @@ alias path='echo -e ${PATH//:/\\n} | nl'
 # git aliases
 alias st="git status -s"
 alias gp="git push"
+alias gaa="git add ${@:-.}"
+alias gcm="git cm"
+
+alias weather="curl -H 'Accept-Language: pl' -A "curl" wttr.in/Wrocław"
+
