@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#
+# NAME
+#   podforceupdate - Updates pods with cache purged.
+#
+# SYNOPSIS
+#   podforceupdate
+
+rm -rf "${HOME}/Library/Caches/CocoaPods"
+rm -rf "`pwd`/Pods/"
+bundle exec pod update
