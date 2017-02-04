@@ -15,6 +15,7 @@ DOTFILES=$HOME/.dotfiles
 . $DOTFILES/helpers.sh
 . $DOTFILES/aliases.zsh
 . $DOTFILES/extra
+. $DOTFILES/less_termcap.zsh
 
 bindkey -v
 bindkey "^R" history-incremental-pattern-search-backward
@@ -32,9 +33,18 @@ export PATH
 eval "$(rbenv init -)"
 eval $(thefuck --alias f)
 
-# Turn on menu select
-autoload compinit && compinit
-zstyle ':completion:*' menu select
+# LS colors, made with https://geoff.greer.fm/lscolors/
+export LSCOLORS="eafxcxdxbxegedabagacad"
+export LS_COLORS="di=34;40:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
+export CLICOLOR=1
 
 # Create PROMPT
 . $DOTFILES/prompt.zsh
+
+# Turn on menu select
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+# Use $LS_COLORS for tab completion
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+autoload -Uz compinit && compinit
+
