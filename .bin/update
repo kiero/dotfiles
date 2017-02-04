@@ -6,6 +6,7 @@
 # Update Homebrew stuff
 info "Checking Homebrew for updates"
 brew update
+info "Outdated brews"
 brew outdated
 if ask_user_default_yes "Do you want to update brewed software if available?"; then
   info "Updating Homebrew stuff"
