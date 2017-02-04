@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#
+# NAME
+#   git-nuke - Nukes a branch locally and on the origin remote.
+#
+# SYNOPSIS
+#   git nuke <branch_name>
+#
+# PARAMETERS
+#   $1 - Branch name.
+#
+# EXAMPLES
+#   git nuke new-feature
+
+git branch -D $1
+git push origin :$1
