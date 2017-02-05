@@ -1,52 +1,107 @@
-set nocompatible  " no compatible with vi
-set backspace=2
-filetype off                  " required
+" no compatible with vi
+set nocompatible
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" VUNDLE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" required for Vundle
+filetype off
+
+" Vundle, the plug-in manager for Vim
+" run :PluginInstall in vim to install plugins
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
+" A code-completion engine
 Plugin 'Valloric/YouCompleteMe'
+" lean and mean status/tabline
 Plugin 'bling/vim-airline'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-airline/vim-airline-themes'
+" Vim/Ruby Configuration Files
 Plugin 'vim-ruby/vim-ruby'
+" Ruby on Rails power tools
 Plugin 'tpope/vim-rails'
+" a Git wrapper
 Plugin 'tpope/vim-fugitive'
 
-call vundle#end()            " required
+" Solarized Colorscheme for Vim
+Plugin 'altercation/vim-colors-solarized'
 
-let mapleader=',' " change the mapleader form \ to ,
-map <Leader>n :NERDTreeToggle<CR>
+call vundle#end()
+" End of Vundle stuff
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CONFIG
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 filetype plugin indent on
 
-set hidden        " hide buffer instead of closing it
+" make backspace work like most other apps
+set backspace=2
+" set backspace=indent,eol,start
+" hide buffer instead of closing it
+set hidden
+" set encoding to utf-8
 set encoding=utf-8
-set number        " show line numbers
-set softtabstop=2     " tab is two spaces now
-set expandtab     " insert space characters whenever the tab key is pressed
-set shiftwidth=2  "
+" show line numbers
+set number
+" tab is two spaces now
+set softtabstop=2
+" insert space characters whenever the tab key is pressed
+set expandtab
+set shiftwidth=2
 set smarttab
-set showmatch     " set show matching brackets
-set ignorecase    " ignore case when searching
-set smartcase     " ignore case if search pattern is all lowercase,
-                  " case-sensitive otherwise
-set hlsearch      " highlight search terms
-set incsearch     " show search matches as you type
-set ruler         " show the cursor position all the time
-set cursorline    " highlight the current cursor line
-set history=100   " remember more commands and search history
-set undolevels=200 " use many levels of undo
+" set show matching brackets
+set showmatch
+" ignore case when searching
+set ignorecase
+" ignore case if search pattern is all lowercase, case-sensitive otherwise
+set smartcase
+" highlight search terms
+set hlsearch
+" show search matches as you type
+set incsearch
+" show the cursor position all the time
+set ruler
+" highlight the current cursor line
+set cursorline
+" remember more commands and search history
+set history=100
+" use many levels of undo
+set undolevels=200
 set wildignore=*.old,*.class
-set title         " change the terminal's title
+" change the terminal's title
+set title
 set autoindent
 
 " don't let Vim write a backup file
 set nobackup
 set noswapfile
+
+" display status line always
+set laststatus=2
+
+" No more toolbar in MacVim
+if has("gui_running")
+  set guioptions=egmrt
+endif
+
+" No more scrollbars in MacVim (even when using NERDTree)
+set guioptions-=L
+
+" set sign of end of line
+set listchars=tab:>-,eol:¬
+
+" change the mapleader form \ to ,
+let mapleader=','
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MISC KEY MAPS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " temporarily switching to paste mode by pressing F2
 set pastetoggle=<F5>
@@ -73,65 +128,24 @@ map <F2> :NERDTreeToggle<CR>
 map <F3> :tabp<CR>
 map <F4> :tabn<CR>
 
-" No more toolbar in MacVim
-if has("gui_running")
-  set guioptions=egmrt
-endif
-
-" No more scrollbars in MacVim (even when using NERDTree)
-:set guioptions-=L
-
-" Snippets settings
-:set omnifunc=csscomplete#CompleteCSS
-
-" set sign of end of line
-set listchars=tab:>-,eol:¬
-" Function to reload snippets without relaunching Vim
-" and also map to hotkey
-function! ReloadSnippets( snippets_dir, ft )
-    if strlen( a:ft ) == 0
-        let filetype = "_"
-    else
-        let filetype = a:ft
-    endif
-
-    call ResetSnippets()
-    call GetSnippets( a:snippets_dir, filetype )
-endfunction
-
-nmap ,rr :call ReloadSnippets(snippets_dir, &filetype)<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" OTHER STUFF
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Source .vimrc automatically after editing
 au! BufWritePost ~/.vimrc source %
 
-" Show syntax highlighting groups for word under cursor
-nmap <C-S-P> :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" COLOR
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" showing colours of hex values (plugin has to be installed)
-if exists('*HexHighlight()')
-  nmap <leader>z :call HexHighlight()<Return>
-endif
+let g:airline_theme='solarized'
 
-" needed for pathogen
-call pathogen#infect()
-
-let g:airline_theme             = 'tomorrow'
-let g:airline_enable_branch     = 1
-let g:airline_enable_syntastic  = 1
-set laststatus=2
-
-" Colorscheme and font
+" set font
 set gfn=Monaco:h12
-" colorscheme rdark
-syntax on         " turn on syntax highlighting
-
-" Solarized theme set up
+" turn on syntax highlighting
+syntax on
 syntax enable
-set background=dark
+" solarized theme set up
 colorscheme solarized
+set background=dark
