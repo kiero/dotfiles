@@ -70,3 +70,5 @@ alias gcm="git cm"
 
 alias weather="curl -H 'Accept-Language: pl' -A "curl" wttr.in/Wrocław"
 
+alias vimrc="vim ~/.vimrc"
+alias zshrc="vim ~/.zshrc"
