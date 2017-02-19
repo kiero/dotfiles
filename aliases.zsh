@@ -68,6 +68,11 @@ alias gp="git push"
 alias gaa="git add ${@:-.}"
 alias gcm="git cm"
 
+# jrnl aliases
+alias jrnl=" jrnl"
+alias jrnlshort=" jrnl --short"
+alias jrnledit=" jrnl -1 --edit"
+
 alias weather="curl -H 'Accept-Language: pl' -A "curl" wttr.in/Wrocław"
 
 alias vimrc="vim ~/.vimrc"
