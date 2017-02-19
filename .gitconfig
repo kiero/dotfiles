@@ -38,3 +38,5 @@
   diffFilter = diff-so-fancy
 [diff]
 	compactionHeuristic = true
+[log]
+  date = format:"%Y-%m-%d, %H:%M:%S"
