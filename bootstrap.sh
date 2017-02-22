@@ -8,6 +8,7 @@ DOTFILES=$(pwd -P)
 
 FILES=(
 .bin
+.cheat
 .config/youtube-dl
 .curlrc
 .gemrc

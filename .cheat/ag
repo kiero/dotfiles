@@ -1,0 +1,25 @@
+# The Silver Searcher. Like ack, but faster.
+
+# Find files containing "foo", and print the line matches in context:
+ag foo
+
+# Ignore VCS ignore files (.gitignore, .hgignore), but still use .ignore.
+ag -U foo
+
+# Search hidden files. This option obeys ignored files.
+ag --hidden foo
+
+# Find files containing "foo", but only list the filenames:
+ag -l foo
+
+# Don't treat special characters (such as .). Eg. search for user.email as is
+ag user\\.email
+
+# Find "foo" in files with a name matching "bar":
+ag foo -G bar
+
+# Find files whose contents match a regular expression:
+ag '^ba(r|z)$'
+
+# Find files with a name matching "foo":
+ag -g foo
