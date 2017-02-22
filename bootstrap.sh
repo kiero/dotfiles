@@ -6,7 +6,21 @@ DOTFILES=$(pwd -P)
 
 . $DOTFILES/helpers.sh
 
-for source in .bin .config/youtube-dl .curlrc .gemrc .gitconfig .gitconfig_private .gitignore_global .hushlogin .vimrc .wgetrc .zshrc; do
+FILES=(
+.bin
+.config/youtube-dl
+.curlrc
+.gemrc
+.gitconfig
+.gitconfig_private
+.gitignore_global
+.hushlogin
+.vimrc
+.wgetrc
+.zshrc
+)
+
+for source in ${FILES[@]}; do
   target=~/$source
   source=$DOTFILES/$source
 
@@ -15,3 +29,4 @@ for source in .bin .config/youtube-dl .curlrc .gemrc .gitconfig .gitconfig_priva
 done
 
 unset DOTFILES
+unset FILES
