@@ -15,6 +15,7 @@ FILES=(
 .gitconfig_private
 .gitignore_global
 .hushlogin
+.irbrc
 .vimrc
 .wgetrc
 .zshrc
