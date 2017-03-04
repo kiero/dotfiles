@@ -1,0 +1,3 @@
+# To list all git config settins and from which file they come from
+git config --list --show-origin
+
