@@ -30,6 +30,9 @@ PATH=$PATH:/usr/sbin
 PATH=$PATH:/sbin
 export PATH
 
+# Set $fpath variable
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 eval "$(rbenv init -)"
 eval $(thefuck --alias f)
 
