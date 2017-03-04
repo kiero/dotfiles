@@ -40,6 +40,7 @@ export CLICOLOR=1
 
 # ZSH settings
 setopt hist_ignore_space
+. $DOTFILES/history.zsh
 
 # Create PROMPT
 . $DOTFILES/prompt.zsh
