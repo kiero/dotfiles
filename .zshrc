@@ -57,3 +57,6 @@ autoload -Uz compinit && compinit
 
 # Source z (tracks most-used directories to make cd smarter)
 . /usr/local/etc/profile.d/z.sh
+
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
