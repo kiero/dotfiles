@@ -60,3 +60,8 @@ autoload -Uz compinit && compinit
 
 bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
+
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
