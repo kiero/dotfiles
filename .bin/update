@@ -22,6 +22,10 @@ if ask_user_default_yes "Do you want to update apps from Mac App Store if availa
   mas upgrade
 fi
 
+# Update Atom's packages
+info "Checking Atom's packages for updates"
+apm upgrade
+
 # # Update ruby gems
 # info "Checking Ruby gems for updates"
 # gem update --system
