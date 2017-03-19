@@ -78,6 +78,9 @@ set wildignore=*.old,*.class
 set title
 set autoindent
 
+" change annoying delay of escape key to 10ms
+set timeoutlen=1000 ttimeoutlen=10
+
 " don't let Vim write a backup file
 set nobackup
 set noswapfile
