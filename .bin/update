@@ -11,6 +11,7 @@ brew outdated
 if ask_user_default_yes "Do you want to update brewed software if available?"; then
   info "Updating Homebrew stuff"
   brew upgrade
+  info "Running brew doctor"
   brew doctor
 fi
 
