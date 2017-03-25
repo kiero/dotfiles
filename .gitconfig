@@ -6,7 +6,7 @@
   editor = vim
   autocrlf = false
   safecrlf = true
-	quotepath = false
+  quotepath = false
   pager = diff-so-fancy | less --tabs=2 -RFX
 [pager]
   diff = diff-so-fancy | less --tabs=2 -RFX
@@ -21,9 +21,9 @@
   new = green bold
   whitespace = red reverse
 [push]
-	default = simple
+  default = simple
 [help]
-	autocorrect = 10
+  autocorrect = 10
 [interactive]
   diffFilter = diff-so-fancy
 [diff]
