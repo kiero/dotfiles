@@ -88,6 +88,13 @@ set noswapfile
 " display status line always
 set laststatus=2
 
+" Force the cursor onto a new line after 80 characters
+set textwidth=80
+" However, in Git commit messages, let’s make it 72 characters
+autocmd FileType gitcommit set textwidth=72
+" Colour the 81st (or 73rd) column so that we don’t type over our limit
+set colorcolumn=+1
+
 " No more toolbar in MacVim
 if has("gui_running")
   set guioptions=egmrt
