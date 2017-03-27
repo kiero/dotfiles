@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Script to backup all evernote notes via AppleScript
+
+echo "Starting to backup Evernote notes"
+
+osascript <<EOD
+  tell application "Evernote"
+    set home_path to path to home folder as Unicode text
+    set allmynotes to find notes
+    set destination to home_path & "Desktop" & ":" & "evernote_notes_backup" as Unicode text
+    export allmynotes to destination format HTML
+  end tell
+EOD
+
+echo "All notes have been successfully backed up"
