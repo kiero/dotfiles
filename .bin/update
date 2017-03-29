@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
-# Program to update software stuff
+#
+# NAME
+#   update - Updates software and packages (Homebrew, Mac App Store, System, Atom)
+#
+# SYNOPSIS
+#   update
 
 . ~/.dotfiles/helpers.sh
 
