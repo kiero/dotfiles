@@ -108,6 +108,9 @@ cask 'suspicious-package'
 cask 'quicklookase'
 cask 'qlvideo'
 
+# Screensaver
+cask 'fliqlo'
+
 ###############################################################################
 # Apps from Mac App Store
 ###############################################################################
