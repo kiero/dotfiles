@@ -1,15 +1,31 @@
 #!/usr/bin/env bash
-# Script to backup all evernote notes via AppleScript
+#
+# NAME
+#   evernote_backup - Backups all evernote notes via AppleScrip
+#
+# SYNOPSIS
+#   evernote_backup
 
 echo "Starting to backup Evernote notes"
 
-osascript <<EOD
-  tell application "Evernote"
-    set home_path to path to home folder as Unicode text
-    set allmynotes to find notes
-    set destination to home_path & "Desktop" & ":" & "evernote_notes_backup" as Unicode text
-    export allmynotes to destination format HTML
-  end tell
+osascript -l JavaScript <<EOD
+  // Get current date and make it proper (proper number of month, add leadings zeros)
+  var currentDate = new Date()
+  var properMonth = ("0" + (currentDate.getMonth() + 1)).slice(-2)
+  var properDay = ("0" + currentDate.getDate()).slice(-2)
+  var properMinutes = ("0" + currentDate.getMinutes()).slice(-2)
+  var properSeconds = ("0" + currentDate.getSeconds()).slice(-2)
+
+  var dateString = currentDate.getFullYear() + "_" + properMonth + "_" + properDay + "_"
+    + currentDate.getHours() + "_" + properMinutes + "_" + properSeconds
+
+  var app = Application.currentApplication()
+  app.includeStandardAdditions = true
+  var destination = app.pathTo('desktop') + "/evernote_notes_backup_" + dateString
+
+  var evernote = Application('Evernote')
+  var allNotes = evernote.findNotes()
+  evernote.export(allNotes, {to: destination, format: "HTML"})
 EOD
 
 echo "All notes have been successfully backed up"
