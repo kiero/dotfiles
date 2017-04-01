@@ -17,6 +17,7 @@ alias dt="cd ~/Desktop"
 alias p='cd ~/Projects && ll'
 alias g="git"
 alias h="history"
+alias cpr="cp -R"
 
 # Repeat the last command with sudo
 alias again="sudo !!"
