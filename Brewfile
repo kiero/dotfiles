@@ -111,6 +111,11 @@ cask 'suspicious-package'
 cask 'quicklookase'
 cask 'qlvideo'
 
+# Fonts
+cask 'font-inconsolata-dz'
+cask 'font-inconsolata-dz-for-powerline'
+cask 'font-meslo-lg'
+
 # Screensaver
 cask 'fliqlo'
 
