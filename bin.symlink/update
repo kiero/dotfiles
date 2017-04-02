@@ -6,7 +6,7 @@
 # SYNOPSIS
 #   update
 
-. ~/.dotfiles/helpers.sh
+source $DOTFILES_ROOT/shared/helpers.sh
 
 # Update Homebrew stuff
 info "Checking Homebrew for updates"

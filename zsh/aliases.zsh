@@ -29,9 +29,6 @@ alias g=git
 function o { open ${@:-'.'} }
 function a { atom ${@:-'.'} }
 
-# Show and hide hidden files in Finder
-alias show='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
-alias hide='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'
 
 # Listing files
 alias ls='ls -FG' # List with slashes (for directories) and colors
@@ -62,12 +59,6 @@ alias localip="ifconfig -a inet | awk '/inet/ {print $2}'"
 alias reload!='source ~/.zshrc'
 
 alias path='echo -e ${PATH//:/\\n} | nl'
-
-# git aliases
-alias st="git status -s"
-alias gp="git push"
-alias gaa="git add ${@:-.}"
-alias gcm="git cm"
 
 # jrnl aliases
 alias jrnl=" jrnl"
