@@ -16,6 +16,7 @@ tap 'homebrew/versions'
 brew 'cheat'
 brew 'chisel'
 brew 'cloc'
+brew 'coreutils'
 brew 'curl', args: ['with-nghttp2']
 brew 'diff-so-fancy'
 brew 'ffmpeg'

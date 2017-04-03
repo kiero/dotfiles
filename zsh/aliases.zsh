@@ -29,15 +29,6 @@ alias g=git
 function o { open ${@:-'.'} }
 function a { atom ${@:-'.'} }
 
-
-# Listing files
-alias ls='ls -FG' # List with slashes (for directories) and colors
-alias l='ls'
-alias lsa='ls -A' # List also hidden files except . and ..
-alias la='lsa'
-alias ll='ls -lh' # List with human readable form
-alias lla='ll -A' # List also hidden files except . and .. with human readable form
-
 # Create a directory and enter it
 function mkd { mkdir -p $1 && cd $_ }
 
