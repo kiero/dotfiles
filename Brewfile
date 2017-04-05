@@ -6,8 +6,6 @@ tap 'caskroom/fonts'
 
 tap 'homebrew/bundle'
 tap 'homebrew/core'
-tap 'homebrew/dupes'
-tap 'homebrew/versions'
 
 ###############################################################################
 # Brews
@@ -35,7 +33,7 @@ brew 'percol'
 brew 'python3'
 brew 'rbenv'
 brew 'rename'
-brew 'homebrew/dupes/rsync'
+brew 'rsync'
 brew 'shellcheck'
 brew 'sleepwatcher'
 brew 'ssh-copy-id'
