@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Easier navigation: .., ..., ...., ....., ~ and -
+# Easier navigation
 alias ..="cd .."
 alias 2..="cd ../.."
 alias 3..="cd ../../.."
@@ -8,55 +8,49 @@ alias 4..="cd ../../../.."
 alias -- -="cd -"
 
 # Quick navigation
+alias c='cd ~/code && ll'
 alias p='cd ~/Projects && ll'
 alias d='cd ~/Desktop'
+alias dl="cd ~/Downloads"
 
 # Shortcuts
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias p='cd ~/Projects && ll'
 alias g="git"
 alias h="history"
 alias cpr="cp -R"
-
-# Repeat the last command with sudo
-alias again="sudo !!"
-
-# Often use commands
-alias v=$EDITOR
-alias g=git
-
-function o { open ${@:-'.'} }
-function a { atom ${@:-'.'} }
+alias rmd="rm -rf"
 
 # Create a directory and enter it
 function mkd { mkdir -p $1 && cd $_ }
 
-# Bundler aliases
-alias be='bundle exec'
-alias bi='bundle install'
-alias bo='bundle outdated'
-alias bu='bundle update'
+# Quick open (if no argument passed then open current directory)
+function o { open ${@:-'.'} }
+# Quick open in Atom (if no argument passed then open current directory)
+function a { atom ${@:-'.'} }
 
-# Middleman-related aliases
-alias mb='bundle exec middleman build'
-alias mid='bundle exec middleman deploy'
-alias ms='bundle exec middleman server'
+# Always enable colored `grep` output
+# Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Repeat the last command with sudo
+alias again="sudo !!"
+# Display each part of $PATH in new line
+alias path='echo -e ${PATH//:/\\n} | nl'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ifconfig -a inet | awk '/inet/ {print $2}'"
 
-alias reload!='source ~/.zshrc'
-
-alias path='echo -e ${PATH//:/\\n} | nl'
+# Show current weather
+alias weather="curl -H 'Accept-Language: pl' -A "curl" wttr.in/Wrocław"
 
 # jrnl aliases
 alias jrnl=" jrnl"
 alias jrnlshort=" jrnl --short"
 alias jrnledit=" jrnl -1 --edit"
 
-alias weather="curl -H 'Accept-Language: pl' -A "curl" wttr.in/Wrocław"
-
+# Zsh and vim
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc"
+alias reload!='source ~/.zshrc'
