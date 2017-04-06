@@ -11,20 +11,25 @@ tap 'homebrew/core'
 # Brews
 ###############################################################################
 
+brew 'carthage'
 brew 'cheat'
 brew 'chisel'
 brew 'cloc'
 brew 'coreutils'
+brew 'cowsay'
 brew 'curl', args: ['with-nghttp2']
 brew 'diff-so-fancy'
 brew 'ffmpeg'
 brew 'git'
 brew 'grc'
+brew 'heroku'
+brew 'highlight'
 brew 'httpie'
 brew 'hub'
 brew 'imagemagick'
 brew 'ios-sim'
 brew 'jp2a'
+brew 'jq'
 brew 'jrnl'
 brew 'mas'
 brew 'ncdu' # ncurses disk usage app
@@ -46,6 +51,7 @@ brew 'tree'
 brew 'vim', args: ['with-override-system-vi']
 brew 'wget'
 brew 'youtube-dl'
+brew 'xctool'
 brew 'z'
 brew 'zsh'
 brew 'zsh-completions'
