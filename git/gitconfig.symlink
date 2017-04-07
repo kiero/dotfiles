@@ -38,6 +38,7 @@
   compactionHeuristic = true
 [log]
   date = format:"%Y-%m-%d, %H:%M:%S"
+  decorate = short
 [alias]
   co = checkout
   cm = commit
