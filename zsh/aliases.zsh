@@ -16,6 +16,7 @@ alias dl="cd ~/Downloads"
 # Shortcuts
 alias g="git"
 alias h="history"
+alias t="touch"
 alias cpr="cp -R"
 alias rmd="rm -rf"
 
