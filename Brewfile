@@ -1,6 +1,7 @@
 cask_args appdir: '/Applications'
 
 tap 'caskroom/cask'
+tap 'caskroom/drivers'
 tap 'caskroom/versions'
 tap 'caskroom/fonts'
 
@@ -121,6 +122,9 @@ cask 'qlvideo'
 cask 'font-inconsolata-dz'
 cask 'font-inconsolata-dz-for-powerline'
 cask 'font-meslo-lg'
+
+# Drivers (printers etc.)
+cask 'hewlettpackardprinterdrivers'
 
 # Screensaver
 cask 'fliqlo'
