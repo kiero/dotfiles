@@ -1,6 +1,6 @@
-# private user config, usernames, etc.
 [include]
-  path = ~/.gitconfig_private
+  path = ~/.gitconfig_private # private user config, usernames, etc.
+  path = ~/.gitconfig_aliases # git aliases
 [core]
   excludesfile = ~/.gitignore_global
   editor = vim
@@ -39,22 +39,3 @@
 [log]
   date = format:"%Y-%m-%d, %H:%M:%S"
   decorate = short
-[alias]
-  co = checkout
-  cm = commit
-  st = status
-  br = branch
-  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-
-  # Show commits since midnight
-  today = !git log --since=midnight --author=\"$(git config user.name)\" --oneline
-
-  # Shows number of commits for passed revision (default revision is HEAD)
-  number-of-commits = "!f() { git rev-list --count ${1:-HEAD}; }; f"
-
-  # List all defined git aliases
-  aliases = !git config --get-regexp alias
-
-  # List git config with origin of given settings
-  list-config = !git config --list --show-origin

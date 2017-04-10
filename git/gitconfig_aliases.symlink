@@ -1,0 +1,70 @@
+[alias]
+  # Basic shortcuts
+  co = checkout
+  cm = commit
+  st = status -s
+  br = branch
+  cl = clone
+  cp = cherry-pick
+  diff = diff --word-diff
+  dc = diff --cached
+
+  # Stash operations
+  sl = stash list
+  sa = stash apply
+  ss = stash save
+
+  # Reset commands
+  r = reset
+  r1 = reset HEAD^
+  r2 = reset HEAD^^
+  rh = reset --hard
+  rh1 = reset HEAD^ --hard
+  rh2 = reset HEAD^^ --hard
+
+  # Finding files and content inside files (grep)
+
+  # Find a file path in codebase
+  f = "!git ls-files | grep -i"
+
+  # Search/grep your entire codebase for a string
+  grep = grep -Ii
+  gr = !git grep
+
+  # Merge
+  ours = "!f() { git co --ours $@ && git add $@; }; f"
+  theirs = "!f() { git co --theirs $@ && git add $@; }; f"
+  fhmerge = "!f() { git fetch origin ${1:-develop} && git merge FETCH_HEAD; }; f"
+
+  # Tags
+  lasttag = describe --tags --abbrev=0
+  lt = !git lasttag
+
+  # Commit logs
+  lg = log --pretty=format:'%C(yellow)%h%Creset ›%C(magenta)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+  lgg = log --graph --pretty=format:'%C(yellow)%h%Creset ›%C(magenta)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+  lga = log --pretty=format:'%C(yellow)%h%Creset ›%C(magenta)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset'
+  lgga = log --graph --pretty=format:'%C(yellow)%h%Creset ›%C(magenta)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset'
+  ll = log --pretty=format:'%C(yellow)%h%Creset ›%C(magenta)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --numstat
+  lld = log --pretty=format:'%C(yellow)%h%Creset ›%C(magenta)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --numstat
+
+  # Show the history of a file, with diffs
+  filelog = log -u
+  fl = !git filelog
+
+  # Log commands to inspect (recent) history
+  diffr  = "!f() { git diff "$1"^.."$1"; }; f"
+  dr  = !git diffr
+  lc  = "!f() { git ll "$1"^.."$1"; }; f"
+
+  # Show commits since midnight
+  today = !git log --since=midnight --author=\"$(git config user.name)\" --oneline
+
+  # Show number of commits for passed revision (default revision is HEAD)
+  number-of-commits = "!f() { git rev-list --count ${1:-HEAD}; }; f"
+
+  # List all defined git aliases
+  aliases = !git config -l | grep alias | cut -c 7-
+
+  # List git config with origin of given settings
+  list-config = !git config --list --show-origin
