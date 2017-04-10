@@ -14,6 +14,9 @@ export LSCOLORS="eafxcxdxbxegedabagacad"
 export LS_COLORS="di=34;40:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
 export CLICOLOR=1
 
+# Turn on cheat colors
+export CHEATCOLORS=true
+
 bindkey -v
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey '^?' backward-delete-char
