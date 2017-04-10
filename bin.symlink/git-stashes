@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#
+# NAME
+#   git-stashes - Shows the diff content of all your stashes
+#
+# SYNOPSIS
+#   git stashes
+
+for stash in $(git stash list | awk '{print $1}' | sed -e 's/://'); do
+  (echo $stash && git stash show -p $stash);
+done
