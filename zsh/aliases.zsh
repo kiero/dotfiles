@@ -46,6 +46,10 @@ alias localip="ifconfig -a inet | awk '/inet/ {print $2}'"
 # Show current weather
 alias weather="curl -H 'Accept-Language: pl' -A "curl" wttr.in/Wrocław"
 
+# youtube-dl
+alias ydl="youtube-dl"
+alias ydlx="youtube-dl -x"
+
 # jrnl aliases
 alias jrnl=" jrnl"
 alias jrnlshort=" jrnl --short"
