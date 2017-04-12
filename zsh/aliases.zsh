@@ -43,6 +43,8 @@ alias path='echo -e ${PATH//:/\\n} | nl'
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ifconfig -a inet | awk '/inet/ {print $2}'"
 
+alias internet_test="ping 8.8.8.8"
+
 # Show current weather
 alias weather="curl -H 'Accept-Language: pl' -A "curl" wttr.in/Wrocław"
 
