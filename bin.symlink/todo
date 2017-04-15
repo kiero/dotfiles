@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#
+# NAME
+#   todo - creates file (in ~/Desktop/todo/) with name of item to do
+#
+# SYNOPSIS
+#   todo <item_to_do>
+#
+# PARAMETERS
+#   $* - name of item to do
+#        (all parameters are treated as one; spaces don't break anything)
+#
+# EXAMPLES
+#   todo iron the shirt
+
+folder=~/Desktop/todo/
+
+if [ ! -d $folder ]; then
+  mkdir -p $folder
+fi
+
+touch "$folder$*"
