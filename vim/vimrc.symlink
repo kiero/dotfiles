@@ -47,8 +47,6 @@ set backspace=2
 set hidden
 " set encoding to utf-8
 set encoding=utf-8
-" show line numbers
-set number
 " tab is two spaces now
 set softtabstop=2
 " insert space characters whenever the tab key is pressed
@@ -137,6 +135,25 @@ map <F2> :NERDTreeToggle<CR>
 " Tab switching with <F3> & <F4>
 map <F3> :tabp<CR>
 map <F4> :tabn<CR>
+
+" Set default to hybrid numbers
+set relativenumber
+set number
+
+function ToggleNumbersOn()
+    set relativenumber!
+endfunction
+
+function ToggleRelativeOn()
+    set relativenumber
+endfunction
+
+" Set absolute numbers in insert mode
+" Set hybrid numbers in normal mode
+autocmd FocusLost * call ToggleNumbersOn()
+autocmd FocusGained * call ToggleRelativeOn()
+autocmd InsertEnter * call ToggleNumbersOn()
+autocmd InsertLeave * call ToggleRelativeOn()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " OTHER STUFF
