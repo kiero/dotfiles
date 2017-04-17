@@ -8,3 +8,7 @@ alias bu='bundle update'
 alias mb='bundle exec middleman build'
 alias mid='bundle exec middleman deploy'
 alias ms='bundle exec middleman server'
+
+# Rake
+alias rk='rake'
+alias rt='rake -T'
