@@ -1,0 +1,5 @@
+# Convert to audio only
+youtube-dl -x <url>
+
+# Download from links list in file
+youtube-dl -a <path_to_file>
