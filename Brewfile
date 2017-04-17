@@ -32,6 +32,7 @@ brew 'ios-sim'
 brew 'jp2a'
 brew 'jq'
 brew 'jrnl'
+brew 'jsonlint'
 brew 'mas'
 brew 'ncdu' # ncurses disk usage app
 brew 'peco'
