@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+#
+# NAME
+#   rakefile_init - Generates draft of Rakefile in current directory
+#
+# SYNOPSIS
+#   rakefile_init
+
+set -e
+
+if [ -f "Rakefile" ]; then
+  echo "Aborting. Rakefile already exists."
+  exit 1
+fi
+
+cat <<EOD > Rakefile
+task :default => :serve
+
+desc "Run server"
+task :serve do
+  system "<command_to_run>"
+end
+
+desc "Build artifacts"
+task :build do
+  system "<command_to_run>"
+end
+
+desc "Clean artifacts"
+task :clean do
+  system "<command_to_run>"
+end
+
+desc "Example of dependency task"
+task :build_from_scratch => [:clean, :build] do
+  system "<command_to_run>"
+end
+EOD
+
+echo "Rakefile generated successfully."
