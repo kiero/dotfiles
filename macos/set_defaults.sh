@@ -207,6 +207,9 @@ defaults write com.apple.dock autohide-delay -float 0
 # Remove the animation when hiding/showing the Dock
 defaults write com.apple.dock autohide-time-modifier -float 0
 
+# Disable bouncing of icons in Dock
+defaults write com.apple.dock no-bouncing -bool true
+
 # Speed up Launchpad open animation
 defaults write com.apple.dock springboard-show-duration -float 0
 # Speed up Launchpad close animation
