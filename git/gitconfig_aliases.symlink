@@ -9,6 +9,9 @@
   diff = diff --word-diff
   dc = diff --cached
 
+  # Branching
+  nb = checkout -b
+
   # Stash operations
   sl = stash list
   sld = !git stash list --date=format:\"%Y-%m-%d, %H:%M:%S\"
