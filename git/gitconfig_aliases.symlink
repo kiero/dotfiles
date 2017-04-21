@@ -11,6 +11,7 @@
 
   # Stash operations
   sl = stash list
+  sld = !git stash list --date=format:\"%Y-%m-%d, %H:%M:%S\"
   sa = stash apply
   ss = stash save
 
