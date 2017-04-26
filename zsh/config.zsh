@@ -10,7 +10,10 @@ export EDITOR='vim -c startinsert'
 export MANPAGER='less -X'
 
 # LS colors, made with https://geoff.greer.fm/lscolors/
+# Difference explained here: https://geoff.greer.fm/2008/06/27/lscolorsls_colors-now-with-linux-support/
+# For BSD/macOS
 export LSCOLORS="eafxcxdxbxegedabagacad"
+# For Linux
 export LS_COLORS="di=34;40:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
 export CLICOLOR=1
 
