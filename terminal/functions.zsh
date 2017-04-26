@@ -6,6 +6,14 @@ function cls() {
 }
 
 # Lists what application has opened (and keeps) the file
-function whatopened() {
-  lsof | grep $1
-}
+function whatopened() { lsof | grep $1 }
+
+# Create a directory and enter it
+function mkd { mkdir -p $1 && cd $_ }
+
+# Quick open (if no argument passed then open current directory)
+function o { open ${@:-'.'} }
+
+# Quick open in Atom (if no argument passed then open current directory)
+function a { atom ${@:-'.'} }
+function ab { atom-beta ${@:-'.'} }
