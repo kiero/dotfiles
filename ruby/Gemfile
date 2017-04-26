@@ -1,0 +1,13 @@
+source "https://rubygems.org"
+
+gem "rake"
+
+# Generates swift playgrounds (https://github.com/segiddins/ThisCouldBeUsButYouPlaying)
+gem "cocoapods-playgrounds"
+
+# Cocoapods
+gem "cocoapods"
+
+# Static Site Generators
+gem "jekyll"
+gem "middleman"

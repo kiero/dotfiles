@@ -17,3 +17,6 @@ if test $(which rbenv)
 then
   install_rubies
 fi
+
+gem install bundler
+bundle install
