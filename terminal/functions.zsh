@@ -17,3 +17,16 @@ function o { open ${@:-'.'} }
 # Quick open in Atom (if no argument passed then open current directory)
 function a { atom ${@:-'.'} }
 function ab { atom-beta ${@:-'.'} }
+
+# Xcode related stuff
+# Generates playground for iOS platform in current directory
+function playground-ios {
+  default_name="$(date +'%Y%m%d_%H%M')_playground_ios"
+  playground --platform=ios ${1:-$default_name}
+}
+
+# Generates playground for macOS platform in current directory
+function playground-mac {
+  default_name="$(date +'%Y%m%d_%H%M')_playground_mac"
+  playground --platform=osx ${1:-$default_name}
+}
