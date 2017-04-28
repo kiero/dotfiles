@@ -58,6 +58,7 @@ brew 'xctool'
 brew 'z'
 brew 'zsh'
 brew 'zsh-completions'
+brew 'zsh-syntax-highlighting'
 
 ###############################################################################
 # Apps from Caskroom
