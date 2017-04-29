@@ -24,3 +24,11 @@ bindkey -v
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
+
+# Search history of commands by arrow up/down
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^[[A' up-line-or-beginning-search
+bindkey '^[[B' down-line-or-beginning-search
