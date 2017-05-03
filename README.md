@@ -39,7 +39,13 @@ Files ending with `.zsh` is automatically loaded into the shell.
 
 ### Normal stuff in structure
 
-All other directories such `zsh/`, `vim/` or `macOS/` contains topic related things (settings, aliases, environments variables and so on). 
+All other directories such `zsh/`, `vim/` or `macOS/` contains topic related things (settings, aliases, environments variables and so on).
+
+## Improvements & bugs
+
+If you find any improvements or bugs, feel free to [open an issue](https://github.com/kiero/dotfiles/issues) and I will check it out.
+
+If you want to add new things and settings you can also propose it via [issues](https://github.com/kiero/dotfiles/issues) but I consider this project as *my dotfiles* so it's unlikely I will merge it into the project. The best way in this case is to fork the repo to yourself and add it there.
 
 ## Acknowledgments
 
