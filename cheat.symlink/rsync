@@ -1,0 +1,28 @@
+# To simply copy content of one directory to another
+rsync -a dir1/ dir2
+
+# To copy directory to another directory
+rsync -a dir1 dir2
+
+# To make a dry-run (-n is for dry-run and -v for verbose)
+rsync -anv dir1/ dir2
+
+# To copy files from remote to local and vice versa
+rsync -a ~/dir1 username@remote_host:destination_directory
+rsync -a username@remote_host:/home/user/dir1 destination_dir_on_local_machine
+
+# Add compression (-z option)
+rsync -az dir1/ dir2
+
+# Add progress bar for the transfers (1) and resume interrupted transfers (2)
+# 1) --progress and 2) --partial (or combined as -P)
+rsync -azP dir1/ dir2
+
+# Delete files from destination directory (by default they are not deleted)
+rsync -a --delete dir1/ dir2
+
+# Exclude given files from sync
+rsync -a --exclude=pattern_to_exclude dir1/ dir2
+
+# Override exclusion for particular files
+rsync -a --exclude=pattern_to_exclude --include=pattern_to_include dir1/ dir2
