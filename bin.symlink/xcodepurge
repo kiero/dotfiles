@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 #
 # NAME
-#   xcodepurge - Removes cached pods and derived data folder.
+#   xcodepurge - Removes cached Pods and DerivedData folder.
 #
 # SYNOPSIS
 #   xcodepurge
 
-rm -rf "${HOME}/Library/Caches/CocoaPods"
 rm -rf "`pwd`/Pods/"
 rm -rf "`pwd`/DerivedData/"
+
+echo "Local Pods and DerivedData folder removed."
