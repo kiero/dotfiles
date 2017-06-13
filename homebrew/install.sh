@@ -10,7 +10,7 @@ set -e
 # Check for Homebrew and macOS
 if test ! $(which brew) && test "$(uname -s)" = "Darwin"
 then
-  echo "  Installing Homebrew for you."
+  echo "Installing Homebrew..."
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 

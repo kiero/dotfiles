@@ -3,6 +3,7 @@
 # This installs Vim stuff
 
 # Install Vundle (vim plugin manager)
+
 echo "Installing Vim dependencies."
 
 VUNDLE_DIRECTORY="$HOME/.vim/bundle/Vundle.vim"

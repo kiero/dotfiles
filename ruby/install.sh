@@ -18,5 +18,8 @@ then
   install_rubies
 fi
 
+echo "Installing bundler..."
 gem install bundler
+
+echo "› bundle install"
 bundle install
