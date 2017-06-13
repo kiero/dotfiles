@@ -11,7 +11,13 @@ echo "› brew bundle"
 brew bundle
 
 # Set macOS defaults
+echo "› Setting macOS defaults..."
 ./macos/set_defaults.sh
 
 # find the installers and run them iteratively
+echo "› Installing installers..."
 find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
+
+echo "› Changing shell to zsh..."
+chsh -s $(which zsh)
+echo "› Successfully changed shell to zsh!"
