@@ -1,3 +1,8 @@
 # To list all git config settins and from which file they come from
 git config --list --show-origin
 
+# To show history of a file
+git log <file_path>
+
+# To show changes to a file
+git log -p <file_path>
