@@ -4,6 +4,8 @@ This is my toolbox of aliases, customizations and scripts that makes my work muc
 
 It also serves as a quick installation of applications and settings when setting up a new machine.
 
+![dotfiles in iTerm](https://raw.githubusercontent.com/kiero/dotfiles/master/screenshot.png)
+
 ## Installation
 
 To install dotfiles run this in your terminal:
