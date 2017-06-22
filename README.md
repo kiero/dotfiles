@@ -21,6 +21,7 @@ It will clone the repo to `~/.dotfiles`. `scripts/bootstrap.sh` script will link
 
 ### Special stuff in structure
 
+* **atom.symlink** — this directory contains all settings files for Atom and is symlinked to `~/.atom`
 * **bin.symlink/** — all scripts from this directory will be available in your `$PATH`
 * **cheat.symlink/** - files here contain cheatsheets for particular commands and are available via [cheat](https://github.com/chrisallenlane/cheat) app
 * **config/** - all directories here are linked to `~/.config/` directory. It's for applications that use `$XDG_CONFIG_HOME` for config path
