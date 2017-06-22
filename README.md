@@ -54,3 +54,7 @@ If you want to add new things and settings you can also propose it via [issues](
 
 * [Zach Holman](https://zachholman.com) and his [dotfiles repository](https://github.com/holman/dotfiles) for topical structure approach and linking scripts
 * [Mathias Bynens](https://mathiasbynens.be/) and his [dotfiles repository](https://github.com/mathiasbynens/dotfiles) for macOS defaults settings script
+
+## License
+
+Kiero's dotfiles are available under the MIT license. See the LICENSE.txt file for more info.
