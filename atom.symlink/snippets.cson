@@ -1,0 +1,59 @@
+###############################################################################
+# Ruby
+###############################################################################
+
+'.source.ruby':
+  'pod default statement':
+    'prefix': 'pod'
+    'body': 'pod \'${1:pod name}\', \'~> ${2:version}\'$3'
+
+  'pod git statement':
+    'prefix': 'podgit'
+    'body': 'pod \'${1:pod name}\', :git => \'${2:repository}\', :branch => \'${3:branch}\'$4'
+
+  'pod git tag statement':
+    'prefix': 'podtag'
+    'body': 'pod \'${1:pod name}\', :git => \'${2:repository}\', :tag => \'${3:tag}\'$4'
+
+  'pod git commit statement':
+    'prefix': 'podcommit'
+    'body': 'pod \'${1:pod name}\', :git => \'${2:repository}\', :commit => \'${3:commit}\'$4'
+
+  'Podfile init structure':
+    'prefix': 'podfileinit'
+    'body': """
+      source 'https://github.com/CocoaPods/Specs.git'
+
+      inhibit_all_warnings!
+      use_frameworks!
+
+      platform :ios, '9.0'
+
+      target '${1:main_target_name}' do
+
+        ${2:pods...}
+
+        target '${3:tests_target_name}' do
+
+          ${4:pods...}
+        end
+      end
+    """
+
+  'gem default statement':
+    'prefix': 'gem'
+    'body': 'gem \'${1:gem_name}\', \'~> ${2:version}\'$3'
+
+  'gem git statement':
+    'prefix': 'gemgit'
+    'body': 'gem \'${1:gem_name}\', :git => \'${2:repository}\', :branch => \'${3:branch}\'$4'
+
+  'Gemfile init structure':
+    'prefix': 'gemfileinit'
+    'body': """
+      source 'https://rubygems.org'
+
+      ruby '2.3.1' # optional statement
+
+      ${1:gems}
+    """

@@ -1,0 +1,58 @@
+"*":
+  core:
+    automaticallyUpdate: false
+    customFileTypes:
+      "source.git-config": [
+        "gitconfig.symlink"
+        "gitconfig_aliases.symlink"
+        "gitconfig_private.symlink"
+        "gitignore_global.symlink"
+      ]
+      "source.ruby": [
+        "irbrc.symlink"
+      ]
+      "source.shell": [
+        "curlrc.symlink"
+        "wgetrc.symlink"
+        "zshrc.symlink"
+      ]
+      "source.viml": [
+        "vimrc.symlink"
+      ]
+      "source.yaml": [
+        "gemrc.symlink"
+      ]
+    disabledPackages: [
+      "metrics"
+      "exception-reporting"
+      "linter-haml"
+      "linter-scss-lint"
+      "linter"
+    ]
+    hideGitIgnoredFiles: false
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      ".sass-cache"
+    ]
+    telemetryConsent: "no"
+  editor:
+    preferredLineLength: 120
+    showIndentGuide: true
+  "file-icons":
+    coloured: false
+    onChanges: true
+  linter:
+    showErrorPanel: false
+  "one-dark-ui": {}
+  "relative-numbers": {}
+  "tree-view":
+    autoReveal: true
+    hideIgnoredNames: true
+  welcome:
+    showOnStartup: false
