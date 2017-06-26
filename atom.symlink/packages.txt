@@ -1,5 +1,3 @@
-minimap
-minimap-highlight-selected
 vim-mode-plus
 merge-conflicts
 project-manager
@@ -17,6 +15,13 @@ relative-numbers
 advanced-open-file
 atom-beautify
 git-blame
+split-diff
+
+minimap
+minimap-highlight-selected
+minimap-git-diff
+minimap-codeglance
+minimap-find-and-replace
 
 language-haml
 language-viml
