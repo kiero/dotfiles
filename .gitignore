@@ -9,3 +9,7 @@ atom.symlink/projects.cson
 
 git/gitconfig_private.symlink
 ruby/Gemfile.lock
+
+# Ignore contents of private directory except directory itself (.gitkeep file to be precise)
+private/*
+!private/.gitkeep
