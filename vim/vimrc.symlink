@@ -25,6 +25,8 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 " a Git wrapper
 Plugin 'tpope/vim-fugitive'
+" Snippets
+Plugin 'SirVer/ultisnips'
 
 " Solarized Colorscheme for Vim
 Plugin 'altercation/vim-colors-solarized'
@@ -159,6 +161,11 @@ autocmd InsertLeave * call ToggleRelativeOn()
 
 " Source .vimrc automatically after editing
 au! BufWritePost ~/.vimrc source %
+
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips/"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
