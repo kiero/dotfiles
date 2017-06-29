@@ -32,6 +32,10 @@
   rh1 = reset HEAD^ --hard
   rh2 = reset HEAD^^ --hard
 
+  # Clean working directory
+  cnf = clean -df
+  cnd = clean -dn
+
   # Finding files and content inside files (grep)
 
   # Find a file path in codebase
