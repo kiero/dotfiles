@@ -18,3 +18,6 @@ alias lla='ll -A' # List also hidden files except . and .. with human readable f
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+
+# Other
+alias cheats='ls ~/.cheat/ | sort'
