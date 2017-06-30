@@ -7,6 +7,7 @@
   cl = clone
   cp = cherry-pick
   diff = diff --word-diff
+  df = diff
   dc = diff --cached
 
   # Branching
