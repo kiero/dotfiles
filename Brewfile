@@ -14,7 +14,7 @@ tap 'homebrew/core'
 
 brew 'carthage'
 brew 'cheat'
-brew 'chisel'
+brew 'chisel', args: ["HEAD"] # releases are not made regularly
 brew 'cloc'
 brew 'coreutils'
 brew 'cowsay'
