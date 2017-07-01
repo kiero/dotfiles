@@ -83,3 +83,6 @@
 
   # List git config with origin of given settings
   list-config = !git config --list --show-origin
+
+  # List contributors with number of commits
+  contributors = shortlog --summary --numbered
