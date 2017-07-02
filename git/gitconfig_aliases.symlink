@@ -72,6 +72,11 @@
   dr  = !git diffr
   lc  = "!f() { git ll "$1"^.."$1"; }; f"
 
+  # Show verbose output about tags, branches or remotes
+  tags = tag -l
+  branches = branch -a
+  remotes = remote -v
+
   # Show commits since midnight
   today = !git log --since=midnight --author=\"$(git config user.name)\" --oneline
 
