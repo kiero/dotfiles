@@ -8,6 +8,14 @@
   safecrlf = true
   quotepath = false
   pager = diff-so-fancy | less --tabs=2 -RFX
+
+  # Make `git rebase` safer on macOS
+  # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+  trustctime = false
+
+  # Prevent showing files whose names contain non-ASCII symbols as unversioned.
+  # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
+  precomposeunicode = false
 [pager]
   diff = diff-so-fancy | less --tabs=2 -RFX
   show = diff-so-fancy | less --tabs=2 -RFX
