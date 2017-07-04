@@ -9,6 +9,8 @@
   diff = diff --word-diff
   df = diff
   dc = diff --cached
+  m = checkout master
+  d = checkout develop
 
   # Branching
   nb = checkout -b
