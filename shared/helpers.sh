@@ -12,8 +12,11 @@ ask_user_default_yes() {
     [yY][eE][sS]|[yY]|"")
         return 0;
         ;;
-    *)
+    [nN][oO]|[nN])
         return 1;
+        ;;
+    *)
+        ask_user_default_yes "$request";
         ;;
   esac
 }
