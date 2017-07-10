@@ -24,6 +24,7 @@ minimap-codeglance
 minimap-find-and-replace
 
 language-haml
+language-slim
 language-swift
 language-viml
 
