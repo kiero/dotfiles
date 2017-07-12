@@ -5,6 +5,7 @@
   st = status -s
   br = branch
   cl = clone
+  scl = clone --depth 1
   cp = cherry-pick
   diff = diff --word-diff
   df = diff
