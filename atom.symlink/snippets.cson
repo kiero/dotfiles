@@ -3,6 +3,10 @@
 ###############################################################################
 
 '.source.ruby':
+  'ruby shebang':
+    'prefix': '!ruby'
+    'body': '#!/usr/bin/env ruby'
+
   'pod default statement':
     'prefix': 'pod'
     'body': 'pod \'${1:pod name}\', \'~> ${2:version}\'$3'
