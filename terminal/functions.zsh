@@ -11,6 +11,9 @@ function whatopened() { lsof | grep $1 }
 # Create a directory and enter it
 function mkd { mkdir -p $1 && cd $_ }
 
+# Creates file and makes it executable
+function tx { touch $1 && chmod +x $1 }
+
 # Quick open (if no argument passed then open current directory)
 function o { open ${@:-'.'} }
 
