@@ -23,6 +23,8 @@ export CHEATCOLORS=true
 bindkey -v
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey '^h' backward-delete-char
+bindkey -s '\es' 'git status -s\n'
+bindkey -s '\ez' 'cd -\n'
 
 # Search history of commands by arrow up/down
 autoload -U up-line-or-beginning-search
