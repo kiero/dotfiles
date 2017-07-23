@@ -17,7 +17,7 @@ atom-beautify
 git-blame
 split-diff
 
-minimap
+minimap-plus
 minimap-highlight-selected
 minimap-git-diff
 minimap-codeglance
