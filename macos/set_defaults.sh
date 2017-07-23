@@ -106,6 +106,9 @@ defaults write com.apple.screencapture type -string "png"
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
 
+# Set login window text
+sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText -string "Are you on the light side of the force?"
+
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
