@@ -22,7 +22,6 @@ export CHEATCOLORS=true
 
 bindkey -v
 bindkey "^R" history-incremental-pattern-search-backward
-bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
 
 # Search history of commands by arrow up/down
