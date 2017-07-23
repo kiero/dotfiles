@@ -30,7 +30,6 @@ It will clone the repo to `~/.dotfiles`. `scripts/bootstrap.sh` script will link
 * **private/** - directory for private things that won't be tracked in git
 * **scripts/** - scripts to bootstrap (link dotfiles) and install all stuff
 * **shared/** - helper scripts with functions which other scripts use
-* **Brewfile** - list of applications to install via [Homebrew](https://brew.sh/)
 
 All things ending with `.symlink` are linked automatically to `$HOME` directory with `.` at the beginning of the filename. It happens in `scripts/bootstrap.sh` phase.
 
