@@ -10,6 +10,8 @@
       ]
       "source.ruby": [
         "irbrc.symlink"
+        "Brewfile.cask"
+        "Brewfile.mas"
       ]
       "source.shell": [
         "curlrc.symlink"
