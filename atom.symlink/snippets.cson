@@ -3,8 +3,8 @@
 ###############################################################################
 
 '.source.ruby':
-  'ruby shebang':
-    'prefix': '!ruby'
+  '#!/usr/bin/env ruby':
+    'prefix': 'ruby'
     'body': '#!/usr/bin/env ruby'
 
   'pod default statement':
