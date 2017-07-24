@@ -1,7 +1,7 @@
 # Set locale variables to prevent possible encoding issues
-export LANG='en_US'
-export LC_ALL='en_US.UTF-8'
-export LC_TIME="en_GB.UTF-8"
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
 
 # Set the default editor
 export EDITOR='vim -c startinsert'
