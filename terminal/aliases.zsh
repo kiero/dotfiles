@@ -19,5 +19,8 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+# Better diff (from: http://sgeb.io/posts/2016/11/til-git-diff-anywhere/)
+alias diff='git --no-pager diff --color=auto --no-ext-diff --no-index'
+
 # Other
 alias cheats='ls ~/.cheat/ | sort'
