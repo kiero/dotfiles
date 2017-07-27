@@ -23,6 +23,7 @@ export CHEATCOLORS=true
 bindkey -v
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey '^h' backward-delete-char
+bindkey '^?' backward-delete-char
 bindkey -s '\es' 'git status -s\n'
 bindkey -s '\ez' 'cd -\n'
 
