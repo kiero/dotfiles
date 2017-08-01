@@ -6,6 +6,7 @@
   br = branch
   cl = clone
   scl = clone --depth 1
+  pl = pull
   cp = cherry-pick
   diff = diff --word-diff
   df = diff
