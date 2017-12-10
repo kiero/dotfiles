@@ -33,3 +33,7 @@ function playground-mac {
   default_name="$(date +'%Y%m%d_%H%M')_playground_mac"
   playground --platform=osx ${1:-$default_name}
 }
+
+function sha256sum {
+  echo -n $1 | shasum -a 256
+}
