@@ -6,3 +6,14 @@ git log <file_path>
 
 # To show changes to a file
 git log -p <file_path>
+
+# Stash only unstaged changes (keep staged changes)
+git stash --keep-index
+
+# Stash hunks of code in interactive mode
+# y - stash this hunk
+# n - do not stash this hunk
+# a - stash this hunk and all later hunks in the file
+# d - do not stash this hunk or any of the later hunks in the file
+git stash -p
+

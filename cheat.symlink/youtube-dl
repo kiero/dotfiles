@@ -1,5 +1,17 @@
 # Convert to audio only
-youtube-dl -x <url>
+youtube-dl -x --audio-format mp3 <url>
 
 # Download from links list in file
 youtube-dl -a <path_to_file>
+
+# List all available formats of requested videos
+youtube-dl -F <url>
+
+# Convert to the best video format
+youtube-dl --format bestvideo <url>
+
+# Convert to mp4 video format
+youtube-dl --format mp4 <url>
+
+# Convert to avi video format (post-processing)
+youtube-dl --recode-video avi <url>
