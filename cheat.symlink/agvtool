@@ -1,0 +1,17 @@
+# Check marketing version of the project (e.g. 3.2.6)
+agvtool what-marketing-version
+agvtool mvers
+
+# Set new marketing version of the project
+agvtool new-marketing-version [version]
+
+# Check build number (e.g. 54)
+agvtool what-version
+agvtool vers
+
+# Bump build number
+agvtool next-version -all
+agvtool bump -all
+
+# Set new specific build number
+agvtool new-version -all [build_number]
