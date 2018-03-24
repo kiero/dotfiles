@@ -20,6 +20,9 @@ export CLICOLOR=1
 # Turn on cheat colors
 export CHEATCOLORS=true
 
+# Disable cocoapods stats
+export COCOAPODS_DISABLE_STATS=true
+
 bindkey -v
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey '^h' backward-delete-char
