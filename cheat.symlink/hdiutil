@@ -1,0 +1,14 @@
+# Create new sparsebundle image (e.g. 2GB, encryption)
+hdiutil create -size 2g -encryption AES-256 -fs HFS+J -type SPARSEBUNDLE -volname 'Name of volume' <file_name>.sparsebundle
+
+# Reclaiming free space in existing sparse bundles by recompacting files
+hdiutil compact <sparsebundle_file>
+
+# Increasing the size of a sparse bundle image (e.g. to 4GB)
+hdiutil resize -size 4g <sparsebundle_file>
+
+# Mount a sparsebundle
+hdiutil mount <sparsebundle_file>
+
+# Unmount image volume
+hdiutil eject <path_to_mounted_volume>
