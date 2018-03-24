@@ -10,8 +10,10 @@ gem "middleman"
 
 # Xcode staff
 
-# Generates swift playgrounds (https://github.com/segiddins/ThisCouldBeUsButYouPlaying)
-gem "cocoapods-playgrounds"
+gem "synx"
 
 # Cocoapods
 gem "cocoapods"
+
+# Generates swift playgrounds (https://github.com/segiddins/ThisCouldBeUsButYouPlaying)
+gem "cocoapods-playgrounds"
