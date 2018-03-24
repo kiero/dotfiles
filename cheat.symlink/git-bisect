@@ -1,0 +1,10 @@
+# Start bisecting
+git bisect start
+git bisect good <good_commit>
+git bisect bad <bad_commit>
+
+# Finish bisecting
+git bisect reset
+
+# Run a command against each commit
+git bisect run <command>
