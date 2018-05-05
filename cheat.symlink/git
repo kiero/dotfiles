@@ -1,5 +1,11 @@
-# To list all git config settins and from which file they come from
+# To list all git config settings and from which file they come from
 git config --list --show-origin
+
+# Delete a local branch
+git branch -d <branch_name>
+
+# Delete a remote branch
+git push <remote_name> --delete <branch_name>
 
 # To show history of a file
 git log <file_path>
@@ -16,4 +22,3 @@ git stash --keep-index
 # a - stash this hunk and all later hunks in the file
 # d - do not stash this hunk or any of the later hunks in the file
 git stash -p
-
