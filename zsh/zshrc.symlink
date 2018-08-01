@@ -22,7 +22,7 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # Use $LS_COLORS for tab completion
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -u
 
 if [[ -a ~/.localrc ]]
 then
