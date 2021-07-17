@@ -94,8 +94,14 @@ install_dotfiles () {
     dst="$HOME/.$(basename "${src%.*}")"
     link_file "$src" "$dst"
   done
+  
+  # Create ~/.config/youtube-dl if needed and link config file
+  if [ ! -d $HOME/.config/youtube-dl ]
+  then
+    mkdir $HOME/.config/youtube-dl 
+  fi
 
-  link_file "./config/youtube-dl.symlink_special" "$HOME/.config/youtube-dl"
+  link_file "$(pwd)/config/youtube-dl.special_symlink/config" "$HOME/.config/youtube-dl/config"
 }
 
 install_dotfiles
