@@ -14,10 +14,6 @@ echo "› brew bundle"
 brew bundle --file="./homebrew/Brewfile"
 brew bundle --file="./homebrew/Brewfile.cask"
 
-# Atom packages
-echo "› Installing atom packages"
-apm install --packages-file atom.symlink/packages.txt
-
 # Set macOS defaults
 echo "› Setting macOS defaults..."
 ./macos/set_defaults.sh
