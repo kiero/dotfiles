@@ -80,8 +80,8 @@ cask 'suspicious-package'
 cask 'qlvideo'
 
 # Fonts
-cask 'font-inconsolata-g'
-cask 'font-inconsolata-g-for-powerline'
+cask 'font-fira-code'
+cask 'font-jetbrains-mono'
 
 # Drivers (printers etc.)
 cask 'apple-hewlett-packard-printer-drivers'
