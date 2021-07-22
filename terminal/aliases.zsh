@@ -24,3 +24,4 @@ alias diff='git --no-pager diff --color=auto --no-ext-diff --no-index'
 
 # Other
 alias cheats='ls ~/.cheat/ | sort'
+alias fr='fork .'
