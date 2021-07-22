@@ -17,6 +17,9 @@ function tx { touch $1 && chmod +x $1 }
 # Quick open (if no argument passed then open current directory)
 function o { open ${@:-'.'} }
 
+# Quick open in Visual Studio Code (if no argument passed then open current directory)
+function c { code ${@:-'.'} }
+
 # Quick open in Atom (if no argument passed then open current directory)
 function a { atom ${@:-'.'} }
 function ab { atom-beta ${@:-'.'} }

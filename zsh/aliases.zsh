@@ -6,7 +6,6 @@ alias 4..="cd ../../../.."
 alias -- -="cd -"
 
 # Quick navigation
-alias c='cd ~/code && ll'
 alias p='cd ~/Projects && ll'
 alias d='cd ~/Desktop'
 alias dl="cd ~/Downloads"
