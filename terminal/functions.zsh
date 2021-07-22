@@ -20,10 +20,6 @@ function o { open ${@:-'.'} }
 # Quick open in Visual Studio Code (if no argument passed then open current directory)
 function c { code ${@:-'.'} }
 
-# Quick open in Atom (if no argument passed then open current directory)
-function a { atom ${@:-'.'} }
-function ab { atom-beta ${@:-'.'} }
-
 # Xcode related stuff
 # Generates playground for iOS platform in current directory
 function playground-ios {
