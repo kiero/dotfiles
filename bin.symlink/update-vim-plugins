@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#
+# NAME
+#   update-vim-plugins - Updates vim plugins
+#
+# SYNOPSIS
+#   update-vim-plugins
+
+vim +PluginUpdate +qall
