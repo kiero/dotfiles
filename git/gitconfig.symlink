@@ -38,6 +38,7 @@
   untracked = cyan
 [push]
   default = simple
+	autoSetupRemote = true
 [help]
   autocorrect = 10
 [interactive]
