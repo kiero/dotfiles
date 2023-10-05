@@ -32,9 +32,9 @@ alias isinternet="ping 8.8.8.8"
 # Show current weather
 alias weather="curl -H 'Accept-Language: pl' -A "curl" wttr.in/Wrocław"
 
-# youtube-dl
-alias yt="youtube-dl"
-alias ytx="youtube-dl -x --audio-format mp3"
+# yt-dlp
+alias yt="yt-dlp"
+alias ytx="yt-dlp -x --audio-format mp3"
 
 # jrnl aliases
 alias jrnl=" jrnl"
