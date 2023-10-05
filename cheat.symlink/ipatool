@@ -1,0 +1,10 @@
+# Search for iOS apps available on the App Store
+ipatool search <term> [--limit <limit>] [--log-level <log-level>]
+
+# Download (encrypted) iOS app packages from the App Store
+ipatool download --bundle-identifier <bundle-identifier> [--log-level <log-level>] [--purchase]
+
+# Authenticate with the App Store (subcommand: login or revoke)
+ipatool auth <subcommand>
+
+# More at https://github.com/majd/ipatool
