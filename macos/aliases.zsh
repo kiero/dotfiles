@@ -21,3 +21,7 @@ alias ddel="defaults delete"
 # Also, clear Apple’s System Logs to improve shell startup speed.
 # Finally, clear download history from quarantine. http://www.macgasm.net/2013/01/18/good-morning-your-mac-keeps-a-log-of-all-your-downloads/
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+
+# Restart macOS core audio daemon
+alias fix-audio='sudo killall coreaudiod'
+alias fix-sound='fix-audio'
