@@ -1,11 +1,9 @@
-tap 'homebrew/bundle'
 tap 'homebrew/core'
 
 ###############################################################################
 # Brews
 ###############################################################################
 
-brew 'python@3.9'
 brew 'carthage'
 brew 'cheat'
 brew 'chisel', args: ["HEAD"] # releases are not made regularly
@@ -21,27 +19,21 @@ brew 'highlight'
 brew 'httpie'
 brew 'hub'
 brew 'imagemagick'
-brew 'ios-sim'
+brew 'instaloader'
 brew 'jid'
 brew 'jo'
 brew 'jp2a'
 brew 'jq'
 brew 'jrnl'
-brew 'jsonlint'
-brew 'mitmproxy'
 brew 'ncdu' # ncurses disk usage app
 brew 'peco'
-brew 'percol'
 brew 'pv'
 brew 'rbenv'
-brew 'rename'
-brew 'rsync'
 brew 'slugify'
-brew 'speedtest_cli'
 brew 'ssh-copy-id'
 brew 'the_silver_searcher'
 brew 'thefuck'
-brew 'tldr'
+brew 'tlrc'
 brew 'tmux'
 brew 'tree'
 # brew 'vim', args: ['with-override-system-vi']
