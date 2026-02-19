@@ -28,6 +28,7 @@ brew 'jrnl'
 brew 'ncdu' # ncurses disk usage app
 brew 'peco'
 brew 'pv'
+brew 'qpdf'
 brew 'rbenv'
 brew 'slugify'
 brew 'ssh-copy-id'
