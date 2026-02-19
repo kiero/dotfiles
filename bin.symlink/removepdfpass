@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+if [ $# -lt 1 ]; then
+  echo "Usage: removepdfpass <file.pdf>"
+  exit 1
+fi
+
+INPUT="$1"
+
+if [ ! -f "$INPUT" ]; then
+  echo "File not found: $INPUT"
+  exit 1
+fi
+
+read -s -p "Enter PDF password: " PASSWORD
+echo
+
+OUTPUT="${INPUT%.pdf}-unlocked.pdf"
+
+qpdf --password="$PASSWORD" --decrypt "$INPUT" "$OUTPUT"
+
+echo "Done → $OUTPUT"
