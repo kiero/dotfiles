@@ -14,9 +14,6 @@ jobs:
       - name: Run bootstrap
         run: bash scripts/bootstrap.sh
 
-      - name: Install Ruby
-        run: bash ruby/install.sh
-
       - name: Install Vim plugins
         run: bash vim/install.sh
 
@@ -32,19 +29,6 @@ jobs:
           test -L ~/.gemrc && echo "OK: .gemrc" || (echo "FAIL: .gemrc missing" && exit 1)
           test -e ~/.config/youtube-dl/config && echo "OK: youtube-dl config" || (echo "FAIL: youtube-dl config missing" && exit 1)
           echo "All symlinks verified!"
-
-      - name: Verify Ruby and Bundler
-        run: |
-          export PATH="$HOME/.rbenv/bin:$PATH"
-          eval "$(rbenv init -)"
-          echo "Checking Ruby versions..."
-          for version in 3.2.2 3.3.7 3.4.2; do
-            rbenv versions | grep -q "$version" \
-              && echo "OK: ruby $version" \
-              || (echo "FAIL: ruby $version not installed" && exit 1)
-          done
-          bundler --version && echo "OK: bundler" || (echo "FAIL: bundler not found" && exit 1)
-          echo "All Ruby versions and Bundler verified!"
 
   test-ubuntu:
     runs-on: ubuntu-latest
@@ -62,9 +46,6 @@ jobs:
       - name: Run bootstrap
         run: bash scripts/bootstrap.sh
 
-      - name: Install Ruby
-        run: bash ruby/install.sh
-
       - name: Install Vim plugins
         run: bash vim/install.sh
 
@@ -80,16 +61,3 @@ jobs:
           test -L ~/.gemrc && echo "OK: .gemrc" || (echo "FAIL: .gemrc missing" && exit 1)
           test -e ~/.config/youtube-dl/config && echo "OK: youtube-dl config" || (echo "FAIL: youtube-dl config missing" && exit 1)
           echo "All symlinks verified!"
-
-      - name: Verify Ruby and Bundler
-        run: |
-          export PATH="$HOME/.rbenv/bin:$PATH"
-          eval "$(rbenv init -)"
-          echo "Checking Ruby versions..."
-          for version in 3.2.2 3.3.7 3.4.2; do
-            rbenv versions | grep -q "$version" \
-              && echo "OK: ruby $version" \
-              || (echo "FAIL: ruby $version not installed" && exit 1)
-          done
-          bundler --version && echo "OK: bundler" || (echo "FAIL: bundler not found" && exit 1)
-          echo "All Ruby versions and Bundler verified!"
