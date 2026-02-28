@@ -6,22 +6,35 @@ set -e
 
 cd "$(dirname $0)"/..
 
-# Install Homebrew
-./homebrew/install_homebrew.sh
+if [[ "$(uname)" == "Darwin" ]]; then
+  # Install Homebrew
+  ./homebrew/install_homebrew.sh
 
-# Run Homebrew through the Brewfile
-echo "› brew bundle"
-brew bundle --file="./homebrew/Brewfile"
-brew bundle --file="./homebrew/Brewfile.cask"
+  # Run Homebrew through the Brewfile (skipped in CI — casks and GUI apps not supported)
+  if [ -z "$CI" ]; then
+    echo "› brew bundle"
+    brew bundle --file="./homebrew/Brewfile"
+    brew bundle --file="./homebrew/Brewfile.cask"
+  else
+    echo "› Skipping brew bundle in CI environment"
+  fi
 
-# Set macOS defaults
-echo "› Setting macOS defaults..."
-./macos/set_defaults.sh
+  # Set macOS defaults (skipped in CI — no GUI, sudo restrictions)
+  if [ -z "$CI" ]; then
+    echo "› Setting macOS defaults..."
+    ./macos/set_defaults.sh
+  else
+    echo "› Skipping macOS defaults in CI environment"
+  fi
+fi
 
 # find the installers and run them iteratively
 echo "› Installing installers..."
-find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
+while IFS= read -r installer; do
+  echo "› Running ${installer}..."
+  bash "${installer}"
+done < <(find . -name install.sh)
 
 echo "› Changing shell to zsh..."
-chsh -s $(which zsh)
-echo "› Successfully changed shell to zsh!"
+chsh -s $(which zsh) || echo "› Could not change shell (requires sudo or already default)"
+echo "› Done!"

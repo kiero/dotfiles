@@ -2,7 +2,11 @@
 
 # Script that sets macOS settings
 # Vast majority of this file comes from mathiasbynens' dotfiles (https://github.com/mathiasbynens/dotfiles/blob/master/.macos)
-
+# Skip in CI environments — no GUI, no sudo, no display
+if [ -n "$CI" ]; then
+  echo "Skipping macOS defaults in CI environment"
+  exit 0
+fi
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'

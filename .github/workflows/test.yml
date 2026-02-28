@@ -1,0 +1,95 @@
+name: Test Installation
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-macos:
+    name: Test on macOS
+    runs-on: macos-latest
+    steps:
+      - name: Checkout dotfiles
+        uses: actions/checkout@v4
+
+      - name: Run bootstrap
+        run: bash scripts/bootstrap.sh
+
+      - name: Install Ruby
+        run: bash ruby/install.sh
+
+      - name: Install Vim plugins
+        run: bash vim/install.sh
+
+      - name: Verify symlinks
+        run: |
+          echo "Checking symlinks..."
+          test -L ~/.gitconfig && echo "OK: .gitconfig" || (echo "FAIL: .gitconfig missing" && exit 1)
+          test -L ~/.gitignore_global && echo "OK: .gitignore_global" || (echo "FAIL: .gitignore_global missing" && exit 1)
+          test -L ~/.gitconfig_aliases && echo "OK: .gitconfig_aliases" || (echo "FAIL: .gitconfig_aliases missing" && exit 1)
+          test -L ~/.zshrc && echo "OK: .zshrc" || (echo "FAIL: .zshrc missing" && exit 1)
+          test -L ~/.vimrc && echo "OK: .vimrc" || (echo "FAIL: .vimrc missing" && exit 1)
+          test -L ~/.curlrc && echo "OK: .curlrc" || (echo "FAIL: .curlrc missing" && exit 1)
+          test -L ~/.gemrc && echo "OK: .gemrc" || (echo "FAIL: .gemrc missing" && exit 1)
+          test -e ~/.config/youtube-dl/config && echo "OK: youtube-dl config" || (echo "FAIL: youtube-dl config missing" && exit 1)
+          echo "All symlinks verified!"
+
+      - name: Verify Ruby and Bundler
+        run: |
+          export PATH="$HOME/.rbenv/bin:$PATH"
+          eval "$(rbenv init -)"
+          echo "Checking Ruby versions..."
+          for version in 3.2.2 3.3.7 3.4.2; do
+            rbenv versions | grep -q "$version" \
+              && echo "OK: ruby $version" \
+              || (echo "FAIL: ruby $version not installed" && exit 1)
+          done
+          bundler --version && echo "OK: bundler" || (echo "FAIL: bundler not found" && exit 1)
+          echo "All Ruby versions and Bundler verified!"
+
+  test-ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout dotfiles
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y zsh git vim curl \
+            build-essential libssl-dev libreadline-dev zlib1g-dev \
+            libyaml-dev libffi-dev libgdbm-dev libncurses-dev
+
+      - name: Run bootstrap
+        run: bash scripts/bootstrap.sh
+
+      - name: Install Ruby
+        run: bash ruby/install.sh
+
+      - name: Install Vim plugins
+        run: bash vim/install.sh
+
+      - name: Verify symlinks
+        run: |
+          echo "Checking symlinks..."
+          test -L ~/.gitconfig && echo "OK: .gitconfig" || (echo "FAIL: .gitconfig missing" && exit 1)
+          test -L ~/.gitignore_global && echo "OK: .gitignore_global" || (echo "FAIL: .gitignore_global missing" && exit 1)
+          test -L ~/.gitconfig_aliases && echo "OK: .gitconfig_aliases" || (echo "FAIL: .gitconfig_aliases missing" && exit 1)
+          test -L ~/.zshrc && echo "OK: .zshrc" || (echo "FAIL: .zshrc missing" && exit 1)
+          test -L ~/.vimrc && echo "OK: .vimrc" || (echo "FAIL: .vimrc missing" && exit 1)
+          test -L ~/.curlrc && echo "OK: .curlrc" || (echo "FAIL: .curlrc missing" && exit 1)
+          test -L ~/.gemrc && echo "OK: .gemrc" || (echo "FAIL: .gemrc missing" && exit 1)
+          test -e ~/.config/youtube-dl/config && echo "OK: youtube-dl config" || (echo "FAIL: youtube-dl config missing" && exit 1)
+          echo "All symlinks verified!"
+
+      - name: Verify Ruby and Bundler
+        run: |
+          export PATH="$HOME/.rbenv/bin:$PATH"
+          eval "$(rbenv init -)"
+          echo "Checking Ruby versions..."
+          for version in 3.2.2 3.3.7 3.4.2; do
+            rbenv versions | grep -q "$version" \
+              && echo "OK: ruby $version" \
+              || (echo "FAIL: ruby $version not installed" && exit 1)
+          done
+          bundler --version && echo "OK: bundler" || (echo "FAIL: bundler not found" && exit 1)
+          echo "All Ruby versions and Bundler verified!"

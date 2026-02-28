@@ -30,26 +30,31 @@ link_file () {
 
       else
 
-        info "File already exists: $dst ($(basename "$src")), what do you want to do?\n\
-        [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
-        read -n 1 action
+        if [ -n "$CI" ]
+        then
+          overwrite=true
+        else
+          info "File already exists: $dst ($(basename "$src")), what do you want to do?\n\
+          [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
+          read -n 1 action
 
-        case "$action" in
-          o )
-            overwrite=true;;
-          O )
-            overwrite_all=true;;
-          b )
-            backup=true;;
-          B )
-            backup_all=true;;
-          s )
-            skip=true;;
-          S )
-            skip_all=true;;
-          * )
-            ;;
-        esac
+          case "$action" in
+            o )
+              overwrite=true;;
+            O )
+              overwrite_all=true;;
+            b )
+              backup=true;;
+            B )
+              backup_all=true;;
+            s )
+              skip=true;;
+            S )
+              skip_all=true;;
+            * )
+              ;;
+          esac
+        fi
 
       fi
 
@@ -96,10 +101,7 @@ install_dotfiles () {
   done
   
   # Create ~/.config/youtube-dl if needed and link config file
-  if [ ! -d $HOME/.config/youtube-dl ]
-  then
-    mkdir $HOME/.config/youtube-dl 
-  fi
+  mkdir -p $HOME/.config/youtube-dl
 
   link_file "$(pwd)/config/youtube-dl.special_symlink/config" "$HOME/.config/youtube-dl/config"
 }
