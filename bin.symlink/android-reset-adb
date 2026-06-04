@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Reset adb by restarting the server and listing connected devices.
+
+set -euo pipefail
+
+adb kill-server && adb start-server && adb devices

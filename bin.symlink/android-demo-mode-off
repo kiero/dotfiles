@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Disable Android demo mode and restore the real status bar.
+# Requires a device/emulator connected via adb.
+
+set -euo pipefail
+
+adb shell am broadcast -a com.android.systemui.demo -e command exit
+adb shell settings put global sysui_demo_allowed 0
+
+echo "Android demo mode disabled."

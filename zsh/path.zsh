@@ -11,4 +11,5 @@ PATH=$PATH:/sbin
 PATH=$PATH:/usr/local/texlive/2021basic/bin/universal-darwin
 PATH=$PATH:/opt/homebrew/opt/openjdk@11/bin
 PATH=$PATH:$HOME/.codeium/windsurf/bin
+PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
 export PATH
